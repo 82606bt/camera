@@ -84,8 +84,18 @@ $("#take-photo").click(function () {
     let picture = webcam.snap();
     document.querySelector('#download-photo').href = picture;
     afterTakePhoto();
-
-   // console.log(picture);
+    fetch('/anhchup', {
+        method: "POST",
+        cache: "no-cache",
+        credentials: "same-origin",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          imageString: imageString, 
+        }),
+      })
+   
 });
 
 function beforeTakePhoto(){
