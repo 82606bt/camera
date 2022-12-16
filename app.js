@@ -132,7 +132,3 @@ $("#exit-app").click(function () {
     removeCapture();
     $("#webcam-switch").prop("checked", false).change();
 });
-$('#download-photo').click(function(e) {
-    e.preventDefault();  //stop the browser from following
-    window.location.href = 'uploads/selfie';
-});
