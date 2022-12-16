@@ -75,17 +75,7 @@ $("#upload-photo").click(function () {
     const payload = {
         image : Image
     }
-    fetch('/anhchup', {
-        method: "POST",
-        cache: "no-cache",
-        credentials: "same-origin",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            Image: Image, 
-        }),
-      })
+   
    
 });
 
