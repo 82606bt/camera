@@ -75,15 +75,6 @@ $("#upload-photo").click(function () {
     const payload = {
         image : Image
     }
-
-   
-});
-
-$("#take-photo").click(function () {
-    beforeTakePhoto();
-    let picture = webcam.snap();
-    document.querySelector('#download-photo').href = picture;
-    afterTakePhoto();
     fetch('/anhchup', {
         method: "POST",
         cache: "no-cache",
@@ -92,9 +83,18 @@ $("#take-photo").click(function () {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          imageString: imageString, 
+            Image: Image, 
         }),
       })
+   
+});
+
+$("#take-photo").click(function () {
+    beforeTakePhoto();
+    let picture = webcam.snap();
+    document.querySelector('#download-photo').href = picture;
+    afterTakePhoto();
+    
    
 });
 
